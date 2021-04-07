@@ -1,6 +1,7 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/angular/types-6-0';
 import Button from './button.component';
+import mdx from './Button.mdx';
 
 export default {
   title: 'Example/Button',
@@ -8,6 +9,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  parameters: { actions: { argTypesRegex: 'clicked' }, docs: { page: mdx } },
 } as Meta;
 
 const Template: Story<Button> = (args: Button) => ({
